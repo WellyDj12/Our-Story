@@ -73,43 +73,32 @@
       color: #777;
     }
 
-    .cerita p {
-      margin: 0;
-      padding: 0 20px; /* sedikit jarak biar nyaman dibaca */
-      text-align: justify;
-    }
+	.cerita p {
+		margin: 0;
+		padding: 0 20px; /* jarak kiri-kanan */
+		text-align: justify;
+		text-indent: 30px; /* baris pertama tiap paragraf menjorok */
+	}
   </style>
 </head>
+
 <body>
   <h1 id="mainTitle">Our Story</h1>
 
   <!-- daftar judul -->
   <div id="daftar" class="daftar">
-    <a onclick="bukaCerita('1')">Awal Petualangan</a>
-    <a onclick="bukaCerita('2')">Rahasia Sungai</a>
+    <a onclick="bukaCerita('perjalananWaktu')">Perjalanan Waktu</a>
   </div>
 
   <!-- isi cerita -->
-  <div id="1" class="cerita">
+  <div id="perjalananWaktu" class="cerita">
     <div class="judul-bar">
       <span class="back" onclick="kembali()">← Back</span>
-      <h2>Awal Petualangan</h2>
+      <h2>Perjalanan Waktu</h2>
     </div>
-    <h4>Pengarang: Chat GPT</h4>
+    <h4>Pengarang: Kevin Djonson, Tema: Vania Idelle Huang, Karakter: Jessica Felicia Winata</h4>
     <p>
-      Di sebuah desa kecil yang dikelilingi hutan lebat, hiduplah seorang anak bernama Arga.
-      Ia selalu bermimpi untuk menjelajahi dunia di luar desanya...
-    </p>
-  </div>
-
-  <div id="2" class="cerita">
-    <div class="judul-bar">
-      <span class="back" onclick="kembali()">← Back</span>
-      <h2>Rahasia Sungai</h2>
-    </div>
-    <h4>Pengarang: Chat GPT</h4>
-    <p>
-      Sungai itu tampak tenang, tetapi penduduk desa percaya ada sesuatu yang tersembunyi di dalamnya...
+		Coming Soon!
     </p>
   </div>
 
