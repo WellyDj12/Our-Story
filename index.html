@@ -6,49 +6,92 @@
   <title>Kumpulan Cerita</title>
   <style>
     body {
-      font-family: 'Georgia', serif;
-      line-height: 1.6;
+      font-family: Arial, sans-serif;
+      background: #f4f4f9;
+      padding: 40px;
+      color: #333;
       max-width: 800px;
       margin: auto;
-      padding: 20px;
-      background: #f9f6f2;
-      color: #333;
     }
     h1 {
       text-align: center;
-      color: #5a3825;
+      margin-bottom: 30px;
+    }
+    .daftar a {
+      display: block;
+      margin: 10px auto;
+      padding: 15px;
+      background: #fff;
+      text-decoration: none;
+      color: #444;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      transition: 0.3s;
+      cursor: pointer;
+      text-align: center; /* judul di daftar selalu di tengah */
+      max-width: 500px;
+    }
+    .daftar a:hover {
+      background: #ddd;
     }
     .cerita {
-      margin-bottom: 50px;
+      display: none;
+      margin-top: 20px;
+      background: #fffaf3;
       padding: 20px;
-      background: #fff;
       border-radius: 10px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-    .judul {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: #7b4c2a;
+    .cerita h2 {
+      margin-top: 0;
+      text-align: center; /* judul di isi cerita di tengah */
+    }
+    .back {
+      display: inline-block;
+      margin-bottom: 15px;
+      cursor: pointer;
+      color: #0077cc;
     }
   </style>
 </head>
 <body>
   <h1>Kumpulan Cerita</h1>
 
-  <div class="cerita">
-    <div class="judul">Cerita 1: Awal Petualangan</div>
+  <!-- Halaman daftar judul -->
+  <div id="daftar" class="daftar">
+    <a onclick="bukaCerita('cerita1')">Cerita 1: Awal Petualangan</a>
+    <a onclick="bukaCerita('cerita2')">Cerita 2: Rahasia Sungai</a>
+  </div>
+
+  <!-- Halaman isi cerita -->
+  <div id="cerita1" class="cerita">
+    <span class="back" onclick="kembali()">← Kembali ke daftar cerita</span>
+    <h2>Cerita 1: Awal Petualangan</h2>
     <p>
-      Di sebuah desa kecil yang dikelilingi hutan lebat, hiduplah seorang anak bernama Arga. 
+      Di sebuah desa kecil yang dikelilingi hutan lebat, hiduplah seorang anak bernama Arga.
       Ia selalu bermimpi untuk menjelajahi dunia di luar desanya...
     </p>
   </div>
 
-  <div class="cerita">
-    <div class="judul">Cerita 2: Rahasia Sungai</div>
+  <div id="cerita2" class="cerita">
+    <span class="back" onclick="kembali()">← Kembali ke daftar cerita</span>
+    <h2>Cerita 2: Rahasia Sungai</h2>
     <p>
       Sungai itu tampak tenang, tetapi penduduk desa percaya ada sesuatu yang tersembunyi di dalamnya...
     </p>
   </div>
 
+  <script>
+    function bukaCerita(id) {
+      document.getElementById("daftar").style.display = "none";
+      document.querySelectorAll(".cerita").forEach(c => c.style.display = "none");
+      document.getElementById(id).style.display = "block";
+    }
+
+    function kembali() {
+      document.querySelectorAll(".cerita").forEach(c => c.style.display = "none");
+      document.getElementById("daftar").style.display = "block";
+    }
+  </script>
 </body>
 </html>
