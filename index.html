@@ -8,15 +8,17 @@
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
-      padding: 40px;
       color: #333;
-      max-width: 800px;
-      margin: auto;
+      margin: 0;
+      padding: 20px 0;
     }
+
     h1 {
       text-align: center;
-      margin-bottom: 30px;
+      margin: 20px 0;
     }
+
+    /* daftar judul cerita */
     .daftar a {
       display: block;
       margin: 10px auto;
@@ -28,49 +30,71 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       transition: 0.3s;
       cursor: pointer;
-      text-align: center; /* judul di daftar selalu di tengah */
+      text-align: center;
       max-width: 500px;
     }
+
     .daftar a:hover {
       background: #ddd;
     }
+
+    /* halaman cerita */
     .cerita {
       display: none;
       margin-top: 20px;
-      background: #fffaf3;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      width: 100%;
     }
-    .cerita h2 {
-      margin-top: 0;
-      text-align: center; /* judul di isi cerita di tengah */
+
+    /* container judul + tombol back */
+    .judul-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center; /* pastikan judul selalu center */
+      position: relative;
+      margin-bottom: 10px;
     }
-    .cerita h4 {
-      margin-top: 5;
-      text-align: center; /* judul di isi cerita di tengah */
+
+    .judul-bar h2 {
+      margin: 0;
+      text-align: center;
     }
+
     .back {
-      display: inline-block;
-      margin-bottom: 15px;
+      position: absolute;
+      left: 20px;   /* tombol back selalu di kiri */
       cursor: pointer;
       color: #0077cc;
+      font-weight: bold;
+    }
+
+    .cerita h4 {
+      text-align: center;
+      margin: 10px 0;
+      color: #777;
+    }
+
+    .cerita p {
+      margin: 0;
+      padding: 0 20px; /* sedikit jarak biar nyaman dibaca */
+      text-align: justify;
     }
   </style>
 </head>
 <body>
-  <h1>Our Story</h1>
+  <h1 id="mainTitle">Our Story</h1>
 
-  <!-- Halaman daftar judul -->
+  <!-- daftar judul -->
   <div id="daftar" class="daftar">
     <a onclick="bukaCerita('1')">Awal Petualangan</a>
     <a onclick="bukaCerita('2')">Rahasia Sungai</a>
   </div>
 
-  <!-- Halaman isi cerita -->
+  <!-- isi cerita -->
   <div id="1" class="cerita">
-    <span class="back" onclick="kembali()">← Kembali ke daftar cerita</span>
-    <h2>Awal Petualangan</h2>
+    <div class="judul-bar">
+      <span class="back" onclick="kembali()">← Back</span>
+      <h2>Awal Petualangan</h2>
+    </div>
     <h4>Pengarang: Chat GPT</h4>
     <p>
       Di sebuah desa kecil yang dikelilingi hutan lebat, hiduplah seorang anak bernama Arga.
@@ -79,8 +103,10 @@
   </div>
 
   <div id="2" class="cerita">
-    <span class="back" onclick="kembali()">← Kembali ke daftar cerita</span>
-    <h2>Rahasia Sungai</h2>
+    <div class="judul-bar">
+      <span class="back" onclick="kembali()">← Back</span>
+      <h2>Rahasia Sungai</h2>
+    </div>
     <h4>Pengarang: Chat GPT</h4>
     <p>
       Sungai itu tampak tenang, tetapi penduduk desa percaya ada sesuatu yang tersembunyi di dalamnya...
@@ -90,6 +116,7 @@
   <script>
     function bukaCerita(id) {
       document.getElementById("daftar").style.display = "none";
+      document.getElementById("mainTitle").style.display = "none";
       document.querySelectorAll(".cerita").forEach(c => c.style.display = "none");
       document.getElementById(id).style.display = "block";
     }
@@ -97,8 +124,8 @@
     function kembali() {
       document.querySelectorAll(".cerita").forEach(c => c.style.display = "none");
       document.getElementById("daftar").style.display = "block";
+      document.getElementById("mainTitle").style.display = "block";
     }
   </script>
 </body>
 </html>
-
