@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kumpulan Cerita</title>
+  <title>Our Story</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -46,6 +46,10 @@
       margin-top: 0;
       text-align: center; /* judul di isi cerita di tengah */
     }
+    .cerita h4 {
+      margin-top: 5;
+      text-align: center; /* judul di isi cerita di tengah */
+    }
     .back {
       display: inline-block;
       margin-bottom: 15px;
@@ -55,27 +59,29 @@
   </style>
 </head>
 <body>
-  <h1>Kumpulan Cerita</h1>
+  <h1>Our Story</h1>
 
   <!-- Halaman daftar judul -->
   <div id="daftar" class="daftar">
-    <a onclick="bukaCerita('cerita1')">Cerita 1: Awal Petualangan</a>
-    <a onclick="bukaCerita('cerita2')">Cerita 2: Rahasia Sungai</a>
+    <a onclick="bukaCerita('1')">Awal Petualangan</a>
+    <a onclick="bukaCerita('2')">Rahasia Sungai</a>
   </div>
 
   <!-- Halaman isi cerita -->
-  <div id="cerita1" class="cerita">
+  <div id="1" class="cerita">
     <span class="back" onclick="kembali()">← Kembali ke daftar cerita</span>
-    <h2>Cerita 1: Awal Petualangan</h2>
+    <h2>Awal Petualangan</h2>
+    <h4>Pengarang: Chat GPT</h4>
     <p>
       Di sebuah desa kecil yang dikelilingi hutan lebat, hiduplah seorang anak bernama Arga.
       Ia selalu bermimpi untuk menjelajahi dunia di luar desanya...
     </p>
   </div>
 
-  <div id="cerita2" class="cerita">
+  <div id="2" class="cerita">
     <span class="back" onclick="kembali()">← Kembali ke daftar cerita</span>
-    <h2>Cerita 2: Rahasia Sungai</h2>
+    <h2>Rahasia Sungai</h2>
+    <h4>Pengarang: Chat GPT</h4>
     <p>
       Sungai itu tampak tenang, tetapi penduduk desa percaya ada sesuatu yang tersembunyi di dalamnya...
     </p>
@@ -95,3 +101,4 @@
   </script>
 </body>
 </html>
+
